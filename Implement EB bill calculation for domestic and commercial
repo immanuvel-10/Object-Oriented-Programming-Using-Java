@@ -1,0 +1,69 @@
+package javaapplivation1;
+import java.util.Scanner;
+public class JavaApplivation1 {
+    int u,amo=0;
+    String type;
+    public void domestic (int u){
+        if (u>=0&&u<=100){
+            amo=0;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>=101&&u<=200){
+            amo=(u-100)*2;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>=201&&u<=500){
+            amo=100*2+(u-200)*4;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>500){
+            amo=100*2+300*4+(u-500)*6;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else{
+            System.out.println("Invalid units");
+        }
+       
+    }
+    public void commerical (int u){
+      if (u>=0&&u<=100){
+            amo=u*2;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>=101&&u<=200){
+            amo=100*2+(u-100)*4;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>=201&&u<=500){
+            amo=100*2+100*4+(u-200)*6;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else if(u>500){
+            amo=100*2+100*4+300*6+(u-500)*12;
+            System.out.println("Amount to be paid is"+amo);
+        }
+        else{
+            System.out.println("Invalid units");
+        }  
+    }
+    public static void main(String[]avgs){
+        Scanner in = new Scanner(System.in);
+        System.out.println("connection type");
+        String type=in.next();
+        System.out.println("unit consumed");
+        int u=in.nextInt();
+        System.out.println("connection type"+type);
+        System.out.println("unit consumed"+u);
+        JavaApplivation2 obj=new JavaApplivation2();
+       
+        if (type.equals("Domestic")||type.equals("domestic")){
+           obj.domestic(u);
+    }
+        else if (type.equals("commercial")||type.equals("commercial")){
+           obj.domestic(u);
+    }
+        else{
+            System.out.println("Invalid type");
+        }
+    }
+}
